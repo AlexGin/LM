@@ -329,12 +329,12 @@ namespace LM
             try
             {
                 RegistryKey regKeyLM = Registry.LocalMachine;
-                RegistryKey regKeyLM1 = regKeyLM.OpenSubKey("SOFTWARE\\BEVALEX\\LicenseManager");
+                RegistryKey regKeyLM1 = regKeyLM.OpenSubKey("SOFTWARE\\LM\\LicenseManager");
 
                 if (null != regKeyLM1)
                 {
                     strSvrName = (string)regKeyLM1.GetValue("NETServerName", (object)(" "));
-                    strDbName = (string)regKeyLM1.GetValue("NETDBName", (object)(" "));
+                    strDbName = "LM"; // (string)regKeyLM1.GetValue("NETDBName", (object)(" "));
 
                     strUsrName = (string)regKeyLM1.GetValue("NETUserName", (object)(" "));
                     strPwd = (string)regKeyLM1.GetValue("NETPassword", (object)(" "));
